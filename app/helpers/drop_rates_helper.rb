@@ -1,0 +1,2 @@
+module DropRatesHelper
+end

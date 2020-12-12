@@ -1,0 +1,48 @@
+<%= form_with(model: drop_rate) do |form| %>
+  <% if drop_rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(drop_rate.errors.count, "error") %> prohibited this drop_rate from being saved:</h2>
+
+      <ul>
+        <% drop_rate.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-light">Light</button>
+  <button type="button" class="btn btn-dark">Dark</button>
+
+  <button type="button" class="btn btn-link">Link</button>
+
+  <div class="field">
+    <%= form.label :run %>
+    <%= form.number_field :run %>
+  </div>
+
+  <div class="field">
+    <%= form.label :artifacts %>
+    <%= form.number_field :artifacts %>
+  </div>
+
+  <div class="field">
+    <%= form.label :des_artifacts %>
+    <%= form.number_field :des_artifacts %>
+  </div>
+
+  <div class="field">
+    <%= form.label :percent_des %>
+    <%= form.text_field :percent_des %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

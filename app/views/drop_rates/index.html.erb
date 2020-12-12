@@ -1,0 +1,146 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Drop Rates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Run</th>
+      <th>Artifacts</th>
+      <th>Des artifacts</th>
+      <th>Percent des</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drop_rates.each do |drop_rate| %>
+      <tr>
+        <td><%= drop_rate.run %></td>
+        <td><%= drop_rate.artifacts %></td>
+        <td><%= drop_rate.des_artifacts %></td>
+        <td><%= drop_rate.percent_des %></td>
+        <td><%= link_to 'Show', drop_rate %></td>
+        <td><%= link_to 'Edit', edit_drop_rate_path(drop_rate) %></td>
+        <td><%= link_to 'Destroy', drop_rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+<%= link_to 'New Drop Rate', new_drop_rate_path %>
+
+<br><br>
+
+<h1>Drop Rate Simulator</h1>
+Artifact Type<br><br>
+
+<div class="form-floating">
+  <select class="form-select" id="artifact_type" aria-label="Artifact Type">
+    <option selected>Any Artifact Type</option>
+    <option value="2">Flower</option>
+    <option value="3">Feather</option>
+    <option value="4">Sands of Eon</option>
+    <option value="5">Goblet</option>
+    <option value="6">Circlet</option>
+  </select>
+  <label for="artifact_type">Artifact Type</label>
+</div>
+<br><br>
+
+<div class="form-floating">
+  <select class="form-select" id="artifact_main" aria-label="Artifact Main">
+    <option selected>Any Main Stat</option>
+    <option value="2">Flower</option>
+    <option value="3">Feather</option>
+    <option value="4">Sands of Eon</option>
+    <option value="5">Goblet</option>
+    <option value="6">Circlet</option>
+  </select>
+  <label for="artifact_main">Artifact Main</label>
+</div>
+
+<br><br>
+
+Artifact Sub Stat<br><br>
+
+<div class="row">
+  <div class="col">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="AtkCheck">
+      <label class="form-check-label" for="AtkCheck">
+        ATK
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="AtkPCheck">
+      <label class="form-check-label" for="AtkPCheck">
+        ATK%
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="HPCheck">
+      <label class="form-check-label" for="HPCheck">
+        HP
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="HPPCheck">
+      <label class="form-check-label" for="HPPCheck">
+        HP%
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="DefCheck">
+      <label class="form-check-label" for="DefCheck">
+        DEF
+      </label>
+    </div>
+  <div class="col">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="DefPCheck">
+      <label class="form-check-label" for="DefPCheck">
+        DEF%
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="EMCheck">
+      <label class="form-check-label" for="EMCheck">
+        EM
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="ERCheck">
+      <label class="form-check-label" for="ERCheck">
+        ER%
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="CritCCheck">
+      <label class="form-check-label" for="CritCCheck">
+        CRITC%
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="CritDCheck">
+      <label class="form-check-label" for="CritDCheck">
+        CRITD%
+      </label>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="form-floating mb-3">
+  <input type="input" class="form-control" id="artifacts_gen" placeholder="100">
+  <label for="artifacts_gen">Number of Artifacts Generated</label>
+</div>
+<br><br>
+
+
+<button type="button" class="btn btn-dark">Simulate</button>

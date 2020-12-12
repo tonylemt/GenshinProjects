@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Run:</strong>
+  <%= @drop_rate.run %>
+</p>
+
+<p>
+  <strong>Artifacts:</strong>
+  <%= @drop_rate.artifacts %>
+</p>
+
+<p>
+  <strong>Des artifacts:</strong>
+  <%= @drop_rate.des_artifacts %>
+</p>
+
+<p>
+  <strong>Percent des:</strong>
+  <%= @drop_rate.percent_des %>
+</p>
+
+<%= link_to 'Edit', edit_drop_rate_path(@drop_rate) %> |
+<%= link_to 'Back', drop_rates_path %>

@@ -1,0 +1,2 @@
+class DropRate < ApplicationRecord
+end
